@@ -1,11 +1,11 @@
 plugins {
     id 'java'
     id 'maven-publish'
-    id 'net.minecrell.plugin-yml.bukkit' version '0.3.0'
+    id 'net.minecrell.plugin-yml.bukkit' version '0.5.3'
 }
 
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
 
 bukkit {
     name = 'servertick'
@@ -13,26 +13,30 @@ bukkit {
 
     apiVersion = '1.16'
 
+    // implements in a later time
+    /*
     permissions {
-        'servertick.metrics' {
-            description = 'Allows the player to receive ServerTick timings'
-            setDefault('OP')
+        'servertick.nometrics' {
+            description = 'Prohibit the player from receiving ServerTick timings'
+            // setDefault('OP')
         }
     }
+    */
 }
 
 repositories {
     mavenCentral()
-    maven { url = 'https://papermc.io/repo/repository/maven-public/' }
+    maven { url = 'https://repo.papermc.io/repository/maven-public/' }
 }
 
 group 'net.cavoj'
 version '1.1'
 
 dependencies {
-    compileOnly group: "com.destroystokyo.paper", name: "paper-api", version: "1.16.1-R0.1-SNAPSHOT"
+    compileOnly group: "io.papermc.paper", name: "paper-api", version: "1.19.4-R0.1-SNAPSHOT"
 }
 
+/*
 publishing {
     publications {
         servertick(MavenPublication) {
@@ -49,3 +53,4 @@ publishing {
         }
     }
 }
+*/

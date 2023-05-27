@@ -32,3 +32,6 @@ bin/
 
 run/
 logs/
+
+# Mac
+.DS_Store

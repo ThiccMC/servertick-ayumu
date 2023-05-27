@@ -35,7 +35,7 @@ public class ServerTick extends JavaPlugin {
     private void handleEnablePacket(String channel, Player player, byte[] message) {
         boolean enabled = message[0] == 1;
         if (enabled) {
-            // if (!player.hasPermission("servertick.metrics")) return;
+            // if (player.hasPermission("servertick.nometrics")) return; // i might as well to implement this later
             listeners.add(player);
             sendFullMetrics(player);
         } else {
